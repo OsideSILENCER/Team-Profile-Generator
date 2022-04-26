@@ -99,26 +99,24 @@ inquirer.prompt([
                 message: "Whaht would you like to do next?",
             },
         ])
+        if (addMemberAns.addMember === "Add a new member"); {
+            return promptQuestions()
+        }
+        return createTeam();
+    }
+    
+    promptQuestions();
 
-
-
-
-
-
+    function createTeam () {
+        console.log("new guy", newStaffMemberData)
+        fs.writeFileSync(
+            "./outputindex.html",
+            generateTeam(newStaffMemberData),
+        );
     }
 
 
 
 
 
-
-
-
-
-
-
-.then((answers) => {
-    generateMarkdown(answers);
-    console.log(answers)
-});
 }
